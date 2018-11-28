@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.button_1:
                 Intent notificationsIntent = new Intent(this, MainActivity.class);
 
@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setTicker("Последнее китайское предупреждение!") // текст появляется ненадолго когда приходит уведомление
                         .setWhen(System.currentTimeMillis())
                         .setAutoCancel(true) // автоматически закрыть уведомление после нажатия
-                        .setProgress(100,50, false);
+                        .setProgress(100, 50, false);
 
-              //  Notification notification = builder.build();
+                //  Notification notification = builder.build();
 
                 // NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 // Альтернативный вариант
@@ -66,35 +66,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.button_2:
-
                 Intent notificationsIntent2 = new Intent(this, MainActivity.class);
-
                 PendingIntent contentIntent2 = PendingIntent.getActivity(this, 0, notificationsIntent2, PendingIntent.FLAG_CANCEL_CURRENT);
-
-                //Resources res = this.getResources();
 
                 NotificationCompat.Builder builder2 = new NotificationCompat.Builder(this);
                 builder2.setContentIntent(contentIntent2)
-                        //Обязательные настройки
                         .setSmallIcon(R.drawable.ic_launcher_background)
-                        //.setContentTitle(res.getString(R.string.notifytitle)) // Заголовок уведомления
                         .setContentTitle("Вторая напоминалка")
-                        //.setContentText(res.getString(R.string.notifytext))
                         .setContentText("должно что-то поменяться") // Текст уведомления
-                        // необязательные настройки
-                        //.setLargeIcon(BitmapFactory.decodeResource(res, R.drawable.hungrycat)) // большая картинка
-                        //.setTicker(res.getString(R.string.warning)) // текст в строке состояния
                         .setTicker("))))))))))))))))!") // текст появляется ненадолго когда приходит уведомление
                         .setWhen(System.currentTimeMillis())
                         .setAutoCancel(true) // автоматически закрыть уведомление после нажатия
-                        .setProgress(100,50, false);
+                        .setProgress(100, 50, false);
 
-                //Notification notification = builder2.build();
-
-                // NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                // Альтернативный вариант
                 NotificationManagerCompat notificationManager2 = NotificationManagerCompat.from(this);
-                notificationManager2.notify(NOTIFY_ID, builder2.build());
+                notificationManager2.notify(2, builder2.build());
 
 
                 break;
@@ -104,39 +90,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 PendingIntent contentIntent3 = PendingIntent.getActivity(this, 0, notificationsIntent3, PendingIntent.FLAG_NO_CREATE);
 
-                //Resources res = this.getResources();
-
                 NotificationCompat.Builder builder3 = new NotificationCompat.Builder(this);
                 builder3.setContentIntent(contentIntent3)
-                        //Обязательные настройки
                         .setSmallIcon(R.drawable.ic_launcher_background)
-                        //.setContentTitle(res.getString(R.string.notifytitle)) // Заголовок уведомления
                         .setContentTitle("Третья напоминалка")
-                        //.setContentText(res.getString(R.string.notifytext))
                         .setContentText("д77777777") // Текст уведомления
-                        // необязательные настройки
-                        //.setLargeIcon(BitmapFactory.decodeResource(res, R.drawable.hungrycat)) // большая картинка
-                        //.setTicker(res.getString(R.string.warning)) // текст в строке состояния
                         .setTicker("3!") // текст появляется ненадолго когда приходит уведомление
                         .setWhen(System.currentTimeMillis())
                         .setAutoCancel(true) // автоматически закрыть уведомление после нажатия
-                        .setProgress(100,50, false);
+                        .setProgress(100, 50, false);
 
-                //Notification notification = builder2.build();
-
-                // NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                // Альтернативный вариант
                 NotificationManagerCompat notificationManager3 = NotificationManagerCompat.from(this);
-                notificationManager3.notify(NOTIFY_ID, builder3.build());
+                notificationManager3.notify(3, builder3.build());
                 break;
         }
-
-
-
-
-
-
     }
-
-
 }
