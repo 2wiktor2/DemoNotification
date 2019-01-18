@@ -85,9 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.button_3:
-
                 Intent notificationsIntent3 = new Intent(this, MainActivity.class);
-
                 PendingIntent contentIntent3 = PendingIntent.getActivity(this, 0, notificationsIntent3, PendingIntent.FLAG_NO_CREATE);
 
                 NotificationCompat.Builder builder3 = new NotificationCompat.Builder(this);
